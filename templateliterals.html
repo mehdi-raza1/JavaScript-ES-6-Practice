@@ -1,0 +1,99 @@
+<!-- 
+    - String literals allowing embeded expression 
+    - makes it easier to create multiline strings and string interpolation 
+    - Enclosed in back-ticks (`Sting goes here `) instead of single quotes ('') or double quotes("")
+    - Can Contain placeHolder
+    -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv"></div>
+
+
+    <script>
+        var myFirstName = "chris"
+        var myLastName = "jones"
+        var myAge =     "30"
+
+        console.log("hello, " + " " + myFirstName + " " + myLastName + " "+".I am"+" "+myAge+" "+"years old")
+
+
+        // var myNewList = 
+        // "<ul>\n"+
+        //     "<li>I am item 1</li>\n"+
+        //     "<li>I am item 2</li>\n"+
+        //     "<li>I am item 3</li>\n"+
+        // "</ul>"
+
+        var myNewList = 
+        "\
+        <ul>\n\
+            <li>I am item 1</li>\n\
+            <li>I am item 2</li>\n\
+            <li>I am item 3</li>\n\
+        </ul>"
+
+
+        const myOtherNewList = 
+        `
+        <ul>
+            <li>I am ES6 number</li>
+            <li>I am item 2</li>
+            <li>i am item 3</li>
+            <li>i am item 4</li>        
+        </ul>
+        `
+
+
+        console.log(myNewList)
+
+
+        const myDiv = document.getElementById("myDiv")
+        myDiv.innerHTML = myOtherNewList
+
+
+        const first = "sally"
+        const last = "smith"
+        const age = 52
+
+        console.log(`Hello ${first} ${last}. You are ${age} today`)
+
+
+        const dateNow = new Date();
+        console.log(`Today is:  ${dateNow.toLocaleString()}`)
+
+
+        const myArray = [1,2,3,4,5];
+        console.log(`${myArray.map((num)=>{
+            `your result is: ${num + 5}`
+        })
+        }`
+    )
+        const  pizzaTopping = ["chesse","mushrooms","sause","pepproni","pineapple"];
+
+        const myPizzaDiv = (
+            `<article>
+                <h1>Pizza Incredients</h1>
+                <ul>
+                    ${pizzaTopping.map((ingredients)=>`<li>${ingredients}</li>`)}
+                </ul>
+                </article>`
+        )
+
+
+        console.log(myPizzaDiv)
+
+
+    
+
+    </script>
+
+</body>
+</html>
