@@ -1,0 +1,55 @@
+//  DOM
+//  DOCUMENT OBJECT MODEL
+
+/*
+
+ -  The Document Object Model (DOM) serves as an interface for HTML and XML documents, providing a structured representation of these documents.
+ -  It defines methods to access and manipulate the document structure, enabling interaction between web pages and scripts or programming languages.
+ -  While the DOM itself is not a programming language, it offers a model of web pages, allowing their content to be accessed and manipulated using JavaScript.
+ -  The DOM represents documents as a structured collection of nodes and objects, each with its own properties and methods, facilitating dynamic updates and interactions with web page content.  
+
+ */
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+ </head>
+ <!-- <body onload="window.alert('i am alerting')">      // or u can difine a function here -->
+    
+ <body onload="showAlert()">                
+
+    <p>Hello , my name is chris</p>
+    <p>I Love The Dom</p>
+    <p>I Really Like The Donuts</p>
+
+
+
+    <script>
+        // function showAlert(){
+           // window.alert('i am alerting u ')
+
+
+        // }
+        // document.body.innerHTML=    '<h1>Using inner body</h1>'
+
+        const myTag = document.getElementsByTagName('p');   // TO GET DATA FROM P TAGS OR ANY OTHER TAGS
+        //     myTag[2].innerHTML = 'I Looove donuts ';
+
+
+        // for(let i =0; i<myTag.length; i++){
+        //     myTag[i].innerHTML= 'Renamed';
+        // }
+        
+        for(const p of myTag){
+            p.innerHTML = 'renamed'
+        }
+
+
+
+    </script>
+ </body>
+ </html>
