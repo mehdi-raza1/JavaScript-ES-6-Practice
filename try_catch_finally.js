@@ -64,7 +64,7 @@ function verifystring(s){
         }
     }
     return str;
-}
+}   
 
 const a = verifystring("i am string")
 // console.log(a)
