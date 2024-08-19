@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        color: red;
+    }
+    .dummy{
+        color: red;
+    }
+    .dummy span{
+        color: orange;
+    }
+    .purple{
+        background-color: purple;
+        height: 100px;
+        width: 100px;
+    }
+</style>
+<body>
+   
+
+    <div class="">I should be colored green</div>
+    <div id="test" class="dummy purple">some <span> dummy </span> text  1 </div>
+    <div class="dummy ">some more <span> dummy </span> text   2</div>
+    <div class="purple"></div>
+
+
+
+
+    <script>
+
+  
+
+        // const dummyDivs = document.querySelectorAll(".dummy span")
+        // const testDiv = document.getElementById('test')
+          
+        // const element = document.getElementById('footer')
+        // const elID = element.id
+        // const replacementID = 'bottom'
+        // element.id = replacementID
+        // console.log(element)
+
+        // const el = document.getElementsByTagName("div")
+        // const footerDiv = el[el.length - 1];
+        // footerDiv.id = 'footer'     
+
+        const purpleDivs = document.querySelectorAll('.purple');
+        // for(const prop of purpleDivs){
+        //     console.log(prop.className)
+        //     prop.className += " foo"
+        // }
+
+        for(const prop of purpleDivs){
+            prop.classList.add('happy')
+        }
+        
+        setTimeout(()=>{
+            for(const prop of purpleDivs){
+            prop.classList.remove('happy')
+        }
+        },1000)
+
+
+        setInterval(()=>{
+            for(const prop of purpleDivs){
+            prop.classList.toggle('happy')
+        }
+        },3000)
+
+
+        // pupleDivs.style.backgroundColor = 'purple'
+        // purpleDivs.style.height  = '100px'
+        // pupleDivs.style.width = '100px'
+
+       
+   </script>
+</body>
+</html>
