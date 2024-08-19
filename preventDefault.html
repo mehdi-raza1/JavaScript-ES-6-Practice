@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div2">
+        <a href="http://www.google.com">Click Here to go to Google</a>
+
+
+        <form method="post" id="myForm" >
+            <input type="text" id="myId">  <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+
+    <script>
+
+       
+        const div2 = document.getElementById('div2')
+        const myLink = div2.querySelector("a")
+        const myForm = document.getElementById("myForm");
+
+        
+
+      function addToList(e){
+        e.preventDefault();
+        const myInput = document.getElementById('myId').value
+        console.log(myInput)
+      }
+        myForm.addEventListener("submit",addToList)
+
+
+
+
+    </script>
+</body>
+</html>
