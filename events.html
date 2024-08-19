@@ -1,0 +1,112 @@
+ <!-- Any events that takes places in the dom  -->
+<!-- can be user-generated or by an api
+many types of events
+events contains properties and methods -->
+
+<!-- addEventListner function takes in the event to listen for , and a second argument to be called  whenever the event fires -->
+<!-- 
+addEventListner("click",function(){
+    logic inside function
+}) -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .background-color{
+            background-color: orange;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- EXAMPLE ONE -->
+    <!-- <div id="clicky">
+        test text
+    </div> -->
+
+    <!-- EXAMPLE TWO -->
+
+    <!-- <div id="clicky">
+        test text
+        <button>Click Here!</button>
+    </div> -->
+    
+     <!-- BY AN OLD WAY  -->
+    <div id="clicky">
+        test text
+        <button onclick="handleClick">Click Here!</button>
+    </div>
+    <div id="background" >
+        <h2>I am H2 Header</h2>
+    </div>
+    <script>
+        // EXAMPLE ONE
+        // const clickDiv = document.getElementById('clicky')
+        // clickDiv.addEventListener('click',function(){
+        //     alert("clicked")
+        // } )
+
+        // EXAMPLE TWO
+        // const clickDiv = document.getElementById('clicky')
+        // const clickableButton = clickDiv.querySelector('button')
+        // clickableButton.addEventListener('click',function(){
+        //     alert(event.type)
+        // } )
+        function handleClick(){
+            alert("clicked")
+        }
+
+        // const logEvent = (e)=>{
+        //     if(e.type === 'click'){
+        //         console.log('click')
+        //     }
+        //     if(e.type === 'focus'){
+        //         console.log('focus')
+        //     }else{
+        //         return false
+        //     }
+        // }
+        // const clickDiv = document.getElementById('clicky')
+        // const clickableButton = clickDiv.querySelector('button')
+        
+        // clickableButton.addEventListener("click",logEvent);
+        // clickableButton.addEventListener("focus",logEvent);
+
+        // clickableButton.addEventListener("focusout",logEvent);
+
+
+        const logEvent = (e)=>{
+          clickableButton.innerText = 'please no click';
+          clickableButton.removeEventListener('click',logEvent)
+          console.log(e.type)
+        }
+        
+        const clickDiv = document.getElementById('clicky')
+        const clickableButton = clickDiv.querySelector('button')
+        
+        clickableButton.addEventListener("click",logEvent);
+        // clickableButton.addEventListener("focus",logEvent)    
+
+        function switchbackground(e){
+        const hasBeenClicked = bckgrnd.contains(e.target)
+        if(hasBeenClicked){
+            bckgrnd.classList.add('background-color')
+        }else{
+            bckgrnd.classList.remove('background-color')
+        }
+        // console.log(hasBeenClicked)
+    }
+        const bckgrnd = document.getElementById("background")
+        bckgrnd.addEventListener('click',switchbackground)
+
+      
+      
+    </script>
+</body>
+</html>
