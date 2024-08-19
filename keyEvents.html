@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <div id="div3">
+        <p>User is typing   </p>
+        <textarea name="" id=""></textarea>
+    </div>
+
+
+
+</body>
+
+<script>
+    document.addEventListener("keydown",function(e){
+        console.log(e.keyCode)
+    })
+
+    document.addEventListener("keyup",function(e){
+        console.log(e.keycode)
+    })
+
+
+    const div3 = document.getElementById('div3')
+    const para = div3.querySelector('p')
+    const textarea = div3.querySelector("textarea")
+    const paraText = "user is Typing"
+
+    textarea.addEventListener('keydown',addText)
+    textarea.addEventListener('keyup',removeText)
+
+    function addText(e){
+        para.innerText = paraText
+    }
+
+    function removeText(e){
+        para.innerHTML ="";
+    }
+    
+</script>
+</html>
