@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        color: red;
+    }
+    .dummy{
+        color: red;
+    }
+    .dummy span{
+        color: orange;
+    }
+</style>
+<body>
+    <!-- FIRST EXAMPLE -->
+    <!-- <div>
+        Some Dummy Text
+    </div>
+    <div>
+        Even More Dummy Divs
+    </div> -->
+
+    <div class="">I should be colored green</div>
+    <div class="dummy">some <span> dummy </span> text  1 </div>
+    <div class="dummy">some more <span> dummy </span> text   2</div>
+    <script>
+
+        // FIRST EXAMPLE
+
+        // const myDiv = document.querySelector('div')
+        // myDiv.style.color = 'green'
+        // myDiv.style.fontSize = '100px'
+
+        const dummyDivs = document.querySelectorAll(".dummy span")
+        console.log(dummyDivs.length)
+            dummyDivs.style.color = 'purple'
+        // for(const props of dummyDivs){
+        //     props.style.color = 'purple'
+
+        // }
+   </script>
+</body>
+</html>
