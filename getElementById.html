@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- EXAMPLE ONE -->
+
+        
+        <!-- <div >
+        <p>
+            <span>  I </span> am witting this off the head of my head
+            <span id="identifier">  I </span> love writting JS and HTML
+            <span>  I </span> am Named 'Billy Bob'
+        </p>
+        <P>
+            <span>Welcome to my site </span>
+            Some more text down <span>here </span>
+        </P>
+        </div> -->
+
+
+            <!-- EXAMPLE TWO -->
+
+
+            <!-- 
+                <div id="app">
+                    <p>just <span>some</span> more random text  off the top my <span>head</span> 
+                    <span>bla bla bla bla</span>
+                    </p>
+                </div>
+                <div >
+                    <p>just <span>some</span> more random text  off the top my <span>head</span> 
+                    <span>bla bla bla bla</span>
+                    </p>
+                </div>
+
+                <div id="results">
+                    <p>I have changed: <span id="total"></span> Words</p>
+                </div> -->
+
+
+                <!-- EXAMPLE3 -->
+
+
+            <div>
+                <h1>Team Members</h1>
+                <ul id="Members">
+                    <li>jane</li>
+                    <li>zack</li>
+                    <li>jessie</li>
+                    <li>Bob</li>
+                </ul>
+            </div>
+    <script>
+
+        // EXAMPLE 1
+
+        // const allSpans = document.getElementsByTagName('span');
+        // for(const prop of allSpans){
+            //     prop.innerHTML = "Somebody"
+            // }
+
+
+            // const ID = document.getElementById('identifier')            //  ID MUST BE UNIQUE
+            // ID.innerHTML = 'we all'                                     //  WE CAN PASS TAG ALSO
+            // ID.innerHTML= "<h1>we all</h1>"
+
+
+
+            // EXAMPLE 2
+
+
+            // const myAppDiv = document.getElementById('app');
+            // const specialWords = myAppDiv.getElementsByTagName('span')
+            // const totalWordsChanged = document.getElementById('total')
+
+            // for(const prop of specialWords){
+            //     prop.innerHTML = 'TEST!!!!'
+            // }
+
+            // totalWordsChanged.innerHTML = specialWords.length
+
+
+            // EXAMPLE3
+
+            const membersUL = document.getElementById('members');
+            const allMembersNames = document.getElementsByTagName('li');
+
+            for(let prop of allMembersNames){
+                if(prop.innerText === 'Bob'){
+                    prop.innerText = 'not Bob'
+                }
+            }
+            // allMembersNames[3].innerHTML = 'not Bob'
+            // console.log(ID)
+    </script>
+</body>
+</html>
