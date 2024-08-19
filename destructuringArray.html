@@ -1,0 +1,90 @@
+ <!-- 
+  THE DESTRUCTURING ASSIGNMENT SYNTAX IS A JAVASCRIPT EXPRESSION THAT MAKES
+   IT POSSIBLE TO EXTRACT DATA FROM ARRAYS OR OBJECTS INTO DISTINCT VARIABLES
+   -  DESTRUCTURING SYNTAX CAN BE USED ON LEFT SIDE OF ASSIGNMENTS
+
+   -->
+
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   </head>
+   <body>
+    
+    <script>
+
+        const myArray = [1,2,3,4,5,6];
+        const [x,y,z] = myArray
+        console.log(x)
+
+
+        const mySecondArray = ["jane Doe","john Doe","Billy Bob"];
+        let name1 ,name2,name3;
+        [name1,name2,name3] = mySecondArray;
+        console.log(name1,name2,name3)
+
+    //   SWAPPING 
+
+        let aa= 100;
+        let bb = 250;
+        let cc = 300;
+        let temp = cc;
+
+        console.log(aa,bb,cc)
+        // [bb,cc] = [cc,bb]
+        // cc = bb
+        // bb = temp
+        // console.log(aa,bb,cc)
+
+
+        // USING WITH FUNCTION
+
+        // function returnArray(){
+        //     return ["donuts","chocolate","candy","gummy bears"]
+        // }
+        // console.log(returnArray())
+
+        // const [donuts,chocolate,candy,gummybears] = returnArray()
+        // console.log(candy)
+
+
+        // second method  REUSABLE FUNCTION
+
+        function returnArray(arr,term){
+            return arr.filter((t)=> t===term)
+        }
+        // console.log(returnArray())
+
+        const [result1] = returnArray(["chicken","fish","tofu"],"chicken")
+        const [result2] = returnArray(["pizza","donut","icecream"],"icecream")
+        console.log(result1)
+        console.log(result2)
+
+
+
+        //  CAN IGNORE SOME VALUES
+
+        const anotherArr = [10,20,50,100,1000,30]
+        // const [numA,numB,numC,numD] = anotherArr
+        //     console.log(`First: ${numA}, Second: ${numB}, third: ${numC}, fourth: ${numD}`)
+
+
+        // IF WANT LEAVE MID VALUES
+        const [numA,,,,numD] = anotherArr
+        console.log(`First: ${numA}, Second: ${numD}`)
+
+
+        // CAN USE REST PATTERN
+
+        function sayHi(firstArgs,...restOfArgs){
+            console.log(`Hi, ${firstArgs}`)
+            console.log(restOfArgs)
+        }
+        
+        sayHi("chris",30,"123 fake st")
+    </script>
+   </body>
+   </html>
