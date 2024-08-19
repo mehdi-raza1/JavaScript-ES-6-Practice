@@ -1,0 +1,30 @@
+<!-- WHEN THE WHOLE DOM WILL BE LOADED  THE THIS WILL WORK -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded",addToLogo)
+
+    function addToLogo(){
+        console.log('dom content loaded and parsed')
+        const myLog = document.getElementById('logo');
+        myLog.innerHTML+= '<h1>hiiiiii</h1>'
+   
+   }
+
+   for(var i=0;i<1000;i++){}
+</script>
+<body>
+    <div id="logo"></div>
+    <div>some dummy texts</div>
+    <div>some more dummy texts</div>
+    <div>hello dummy texts</div>
+</body>
+</html>
