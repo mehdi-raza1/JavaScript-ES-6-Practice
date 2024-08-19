@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        color: red;
+    }
+    .dummy{
+        color: red;
+    }
+    .dummy span{
+        color: orange;
+    }
+</style>
+<body>
+ 
+    <div>I should be colored green</div>
+    <div class="dummy">some <span> dummy </span> text  1 </div>
+    <div class="dummy">some more <span> dummy </span> text   2</div>
+    <script>
+
+    
+
+        const dummyDivs = document.querySelector(".dummy span")
+        console.log(dummyDivs.parentNode.parentNode)
+        dummyDivs.parentNode.style.backgroundColor = 'teal'
+            
+      
+   </script>
+</body>
+</html>
