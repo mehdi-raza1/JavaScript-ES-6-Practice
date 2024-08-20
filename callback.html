@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main">
+      <button>Click</button>
+      <p id="content"></p>
+    </div>
+
+    <script>
+      // call back and promises
+      // A way to write asnchronus javascript
+
+      // -- A CALLBACK FUNCTION IS A FUNCTION THAT IS PASSED TO ANOTHER FUNCTION AS A PARAMETER
+      // -- THIS INNER FUNCTION IS CALLED AT SOME POINT DURING THE EXCECUTION OF THE CONTAINING FUNCTION
+      // -- IN OTHER WORDS, ITS "CALLED BACK" AT SOME SPECIFIED POINT INSIDE THE CONTAINING FUNCTION BODY
+
+      // function shouldGoFirst(){
+      //     setTimeout(()=>{
+      //         console.log('i should always go first')
+      //     })
+      // }
+
+      // function shouldGoSecond(){
+      //     console.log('i should always go second')
+      // }
+
+      // shouldGoFirst()
+      // shouldGoSecond()
+
+      function shouldGoFirst(callback) {
+        setTimeout(() => {
+          console.log("i should always go first");
+          callback();
+        }, 1000);
+      }
+
+      function shouldGoSecond() {
+        console.log("i should always go second");
+      }
+
+      // shouldGoFirst(shouldGoSecond)
+
+      function sumUpNumber(num1, num2, cb) {
+        let summedValue;
+        setTimeout(() => {
+          summedValue = num1 + num2;
+        }, 1000);
+        cb(summedValue);
+      }
+
+      function logSummedValue(val) {
+        console.log(`The Sum Total  Is${val}`);
+      }
+
+      // sumUpNumber(100, 150, logSummedValue)
+
+      // function sayWhenDone(loopCount){
+      //     console.log(`when Done ${loopCount} times `)
+      // }
+
+      // function looper(number,cb){
+      //    let i = 0;
+      //     for(i; i<number ; i++){
+      //         console.log(i)
+      //     }
+      //     return cb(i)
+      // }
+
+      // const myNames = ['chris','russels','toby','angela']
+      // looper(6, sayWhenDone)
+
+      function sayWhenDone(loopCount) {
+        console.log(`when Done ${loopCount} times `);
+      }
+
+      function looper(arr, cb) {
+        let i = 0;
+        for (i; i < arr.length; i++) {
+          const names = arr[i];
+          const capitalizedNames =
+            names.charAt(0).toUpperCase() + names.slice(1);
+          arr[i] = capitalizedNames;
+        }
+        return cb(i);
+      }
+
+      const myNames = ["chris", "russels", "toby", "angela"];
+      // looper(myNames, sayWhenDone)
+      // console.log(myNames)
+
+      function anotherLogger(num1, num2, somethingElse) {
+        const squaredAndSummedNums = num1 * num1 + num2 * num2;
+        console.log(squaredAndSummedNums);
+        if (somethingElse && typeof somethingElse === "function") {
+          //   check if there is function or not
+          somethingElse(squaredAndSummedNums);
+        }
+      }
+
+      // anotherLogger(10, 50,function(p){
+      //     console.log(`squared and summed = ${p}`)
+      // })
+
+      const myDiv = document.getElementById("main");
+      const myButton = myDiv.querySelector("button");
+      const myPara = document.getElementById('content');
+
+      const fakeData = {
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ipsum, reiciendis consequuntur deserunt culpa sequi assumenda harum quas nostrum minus.",
+      };
+
+      myButton.addEventListener("click", function () {
+        requestData(popularDom)
+      });
+
+      function requestData(cb){
+        let data = "...loading"
+        cb(data )
+        setTimeout(()=>{
+            data = fakeData.text
+            cb(data)
+        },2000)
+      }
+
+      function popularDom(data){
+        myPara.innerText += data
+      }
+
+
+      function counter(){
+        setTimeout(()=>{
+            console.log("first")
+            setTimeout(()=>{
+                console.log("second")
+                setTimeout(()=>{
+                    console.log('third')
+                    setTimeout(()=>{
+                        console.log("fourth")
+                    },400)
+                },600)
+
+            },800)
+        },1000)
+      }
+
+        // counter()
+    </script>
+  </body>
+</html>
