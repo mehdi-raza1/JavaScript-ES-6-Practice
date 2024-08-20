@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="planet">
+      <button>Click for Planet</button>
+    </div>
+
+    <script>
+      //  fetch API
+      //  return a promise
+
+      const myDiv = document.getElementById("planet");
+      const myButton = myDiv.querySelector("button");
+
+      myButton.addEventListener("click", getPlanet);
+
+      function getPlanet() {
+        const randomNum = Math.floor(Math.random()*10)+1
+
+        fetch(`https://swapi.dev/api/planets/${randomNum}/`)
+          .then((data) => data.json())
+          .then((d) => popularPlanet(d))
+          .catch((err) => console.log(err.message));
+      }
+
+
+      function popularPlanet(planetObj){
+        const {name, climate,terrain,population,orbital} = planetObj
+        const newDiv = document.createElement("div")
+        const plannetDiv = `
+            <div>
+                <h1>${name}</h1>
+                <p>${name} has a climate that is ${climate}.
+                    The Terrain is ${terrain}, with a pop. of ${population}.
+                    The orbitalperiod is ${orbital}    
+                </p>    
+            </div>
+        `
+        myDiv.insertAdjacentHTML("beforeend",plannetDiv)
+        // newDiv.innerHTML += plannetDiv
+        // myDiv.appendChild(newDiv)
+
+
+        // const newParagraph =document.createElement("p")
+        // newParagraph.innerText = planetObj.name
+        // myDiv.appendChild(newParagraph)
+      }
+
+
+    // function popularPlanet({name}){
+    //         const newParagraph =document.createElement("p")
+    //         newParagraph.innerText = name
+    //         myDiv.appendChild(newParagraph)
+    //   }
+    </script>
+  </body>
+</html>
