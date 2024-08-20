@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #background-color{
+            background:orange;
+            border: 1px solid black
+        }
+    </style>
+</head>
+<body>
+
+    <div id="clicky">Text Test
+
+        <button>Click Me</button>
+    </div>
+
+
+    <div id="background">
+        <h2>I am Size H2 Header</h2>
+    </div>
+
+    <script>
+            const clickDiv = document.getElementById('clicky')
+            const clickableButton = clickDiv.querySelector("button")
+
+
+            clickDiv.addEventListener("click",function(event){
+                console.log(event)
+            })
+
+            clickableButton.addEventListener('click',logEvent)
+
+            clickableButton.addEventListener('focus',logEvent)
+           
+            // function logEvent(e){
+            //     if(e.type=="click"){
+            //         console.log("click")
+            //     }
+            //     if(e.type=="focus"){
+            //         console.log("focus")
+            //     }
+            //     else{
+            //         return false;
+            //     }
+            // }
+            function logEvent(e){
+                clickableButton.innerText = "please no click"
+                clickableButton.removeEventListener("click",logEvent)       // To Remove Event
+                console.log(e.type)
+
+            }
+
+            function switchBackground(e){
+                // console.log(e)
+                if(e.type === "mousedown"){
+                    bckgrnd.classList.add("background-color")
+                }else if(e.type === "focusout"){
+                    bckgrnd.classList.remove("background-color")
+                }
+            }
+
+            const bckgrnd = document.getElementById("background")
+            bckgrnd.addEventListener("mousedown",switchBackground)
+            bckgrnd.addEventListener("focusout",switchBackground)
+
+           
+    </script>
+    
+</body>
+</html>
