@@ -97,3 +97,36 @@ function show(){
 show()
 console.log(chk) 
 
+
+// var testing = "raza"
+
+// function sayTesting(){
+//   var testing = 'jane'      // if u are redeclaring the variable it will working scope 
+//   // testing = 'jane'      // if u are reasigning the variable it will work out of the scope as well 
+//   console.log(testing)
+// }
+
+
+// console.log(testing)
+// sayTesting();
+// console.log(testing)
+
+
+// var testing = "raza"
+
+function sayTesting(){
+  var shouldBeTrue = true;
+  // testing = 'jane'      // if u are reasigning the variable it will work out of the scope as well 
+  // console.log(testing)
+  if(shouldBeTrue){
+    var testing = 'jane'      // if u are redeclaring the variable it will working scope 
+    testing = 'chris'
+    console.log(testing)
+  }
+  console.log(testing)
+}
+
+
+// console.log(testing)
+sayTesting();
+// console.log(testing)

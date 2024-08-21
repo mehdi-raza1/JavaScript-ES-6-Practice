@@ -63,3 +63,7 @@ tinyKitty.makeNoice()
 
 console.log(tinyKitty instanceof Cat)
 console.log(tinyKitty instanceof Dog)
+const data = []
+console.log(tinyKitty)
+data.push(tinyKitty)
+console.log(data)

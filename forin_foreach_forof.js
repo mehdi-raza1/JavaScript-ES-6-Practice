@@ -66,14 +66,14 @@
 //  new loop in E6 js  used to loop over iterable objects (array,strings,maps,sets,etc)
 //  for looping of data --- like value in an array 
 
-const drinks = ['coffee','sprite','tea','coke','pepsi'];
+// const drinks = ['coffee','sprite','tea','coke','pepsi'];
 
-for(const d of drinks){
-    if(d === 'tea'){
-        continue;
-    }
-    console.log(d)
-}
+// for(const d of drinks){
+//     if(d === 'tea'){
+//         continue;
+//     }
+//     console.log(d)
+// }
 
 
 // const myStrings = 'hello';
@@ -100,4 +100,16 @@ const uniqueNames = new Set(orignalArray);
 
 for(const n of uniqueNames){
     console.log(n)
+}
+
+
+const myObject={
+    name:'chris',
+    age: 20,
+    city: "fake city",
+    strret : 'fake street'
+}
+
+for(const a of myObject){
+    console.log(a)
 }

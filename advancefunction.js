@@ -160,7 +160,9 @@ console.log(bankAccount)
 
 
 // HOW TO DISPLAY ALL THE ARGUMENTS
-    ///  IT WILLDISPLAY ALL THE ARGUMENTS IN AN OBJECT AND KEY WLL BE STARTING FROM ZERO
+    ///  IT WILL DISPLAY ALL THE ARGUMENTS IN AN OBJECT AND KEY WLL BE STARTING FROM ZERO
+
+    
 // function logAllArgumnets(x){
 //     console.log(arguments)
 // }

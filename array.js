@@ -102,7 +102,8 @@ var coconutDonut =  new DonutConstructor('chocolate', false, 8, true)
 var vanilaDonut =  new DonutConstructor('vanilla', true, 10, false)
 
 
-// var myDonut = [coconutDonut,vanilaDonut]
+var myDonut = [coconutDonut,vanilaDonut]
+// console.log(myDonut)
 // var lastDonut =myDonut.pop()     // to get last index
 // console.log(lastDonut)
 // lastDonut.sayType()

@@ -116,3 +116,66 @@ function  consfunc(){
     console.log(myName)    
 }
 consfunc()
+
+function sayHi(){
+    var shouldSayhi = true
+    if(shouldSayhi===true){
+        var myName = 'chris'        //THIS VAR  WILL WORK OUT SIDE THE SCOPE OR U CAN SAY BLOCK 
+        shouldSayhi = false;
+    }
+    myName = "raza"
+    console.log(myName)
+    console.log(shouldSayhi)
+}
+
+
+// console.log(myName)
+// console.log(shouldSayhi)
+sayHi()
+// console.log(myName)
+
+
+// function sayChecking(){
+//     var shouldSayHi = true;
+//     var reallySayHi = true;
+//     if(shouldSayHi){
+//         let  myName = "let Name"
+//         // console.log(myName)
+//     }
+//     myName = 'new Name'
+//     console.log(myName)
+// }
+
+// sayChecking()
+
+
+// function sayChecking(){
+//     var shouldSayHi = true;
+//     var reallySayHi = true;
+    
+//     if(shouldSayHi){
+//         let  myName = "let Name"
+//         console.log(myName)
+//         myName = 'new Name'
+//         console.log(myName)
+//     }
+//     //  console.log(myName)
+// }
+
+// sayChecking()
+
+function sayChecking(){
+    var shouldSayHi = true;
+    var reallySayHi = true;
+    // const  myName = "let Name"
+    
+    if(shouldSayHi){
+        const  myName = "let Name"
+        console.log(myName)
+        // myName = 'new Name'
+        // console.log(myName)
+    }
+     console.log(myName)
+}
+
+sayChecking()
