@@ -39,8 +39,12 @@ function MyException(message){
     this.message = message
     this.name = "my exception"
     this.toString = function(){
-        return this.name + " " + this.message
+        return this.name + " : " + this.message
     }
 }
 
 throw new MyException("field Invalid")
+
+
+
+

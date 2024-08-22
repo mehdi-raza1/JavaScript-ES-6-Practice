@@ -58,7 +58,7 @@ function verifystring(s){
         var str = new MyString(s)
     }catch(e){
         if(e instanceof StringExceptionError){
-            console.log("string exception")
+            console.log("string exception" + e)
         }else{
             console.log("other exception")
         }
@@ -71,6 +71,9 @@ const a = verifystring("i am string")
 a.getValue()
 
 
+
+
+ 
 
 function finallyExample(){
     try {
